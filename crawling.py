@@ -44,5 +44,5 @@ def obtainValue(url, search):
     for i, element in enumerate(feeder):
         for j, value in enumerate(comparable):
             if value[1]==element[1]:
-                print(comparable[j+1])
+                contentFinded.append(comparable[j+1])
     return contentFinded
