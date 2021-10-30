@@ -2,7 +2,7 @@ import requests
 
 def obtainer(url):
     opened = False
-    r = requests.get(url)
+    r = requests.get(url, stream=True)
     text = r.text
     textToPut = ""
     allNodes = []
