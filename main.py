@@ -16,11 +16,8 @@ def main():
                 print(playerSnippet)
                 playerURL = "https://www.pro-football-reference.com/players"+playerSnippet
                 playerPage = crawling.obtainer(playerURL)
-                playerPageFinder = crawling.finder(playerURL,"<strong>")
-                
-                    
+                playerPageObtainValue = crawling.obtainValue(playerURL,"<strong>")
+                name = playerPageObtainValue[1][0]
+                print(name)
         characterNumber+=1
-print(crawling.obtainValue("https://www.pro-football-reference.com/players/A/AaitIs00.htm","<strong>"))
-
-
-#main()
+main()
