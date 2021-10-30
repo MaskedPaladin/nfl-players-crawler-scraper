@@ -7,10 +7,12 @@ def obtainer(url):
     textToPut = ""
     allNodes = []
     node = [[],[]]
+    nodeNumber = 0
     for seek, i in enumerate(text):
         if i == "<":
-            node[0] = textToPut.rstrip()
-            node[1] = seek
+            nodeNumber+=1
+            node[0] = textToPut.strip()
+            node[1] = nodeNumber
             allNodes.append(node)
             opened=True
             node=[[],[]]
@@ -18,8 +20,9 @@ def obtainer(url):
         if opened==True:
             textToPut+=i
             if i == ">":
-                node[0] = textToPut.rstrip()
-                node[1] = seek
+                nodeNumber+=1
+                node[0] = textToPut.strip()
+                node[1] = nodeNumber
                 allNodes.append(node)
                 opened=False
                 node=[[],[]]
@@ -38,19 +41,8 @@ def obtainValue(url, search):
     contentFinded = []
     feeder = finder(url, search)
     comparable = obtainer(url)
-    toPut = ""
-    key = ""
-    starter = []
-    finisher = []
-    toBePutted = []
-    startKey = ""
-    finishKey = ""
-    init = False
-    finish = False
-    for element in comparable:
-        for i, x in enumerate(element[0]):
-            pass
-    print(finisher)
+    for i, element in enumerate(feeder):
+        for j, value in enumerate(comparable):
+            if value[1]==element[1]:
+                print(comparable[j+1])
     return contentFinded
-    
-    #Content in seek - length of content+1

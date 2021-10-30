@@ -20,7 +20,7 @@ def main():
                 
                     
         characterNumber+=1
-print(crawling.obtainValue("https://www.pro-football-reference.com/players/A/AaitIs00.htm","<p>"))
+print(crawling.obtainValue("https://www.pro-football-reference.com/players/A/AaitIs00.htm","<strong>"))
 
 
 #main()
